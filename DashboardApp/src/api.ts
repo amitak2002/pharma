@@ -1,4 +1,6 @@
-const API_BASE_URL = 'http://localhost:2002/api';
+const API_BASE_URL = `${import.meta.env.VITE_API_URL}/api`;
+
+// const API_BASE_URL = 'https://pharma-1-2lx4.onrender.com/api';
 
 export interface User {
   _id: string;
