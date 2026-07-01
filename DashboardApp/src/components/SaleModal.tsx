@@ -131,7 +131,7 @@ export const SaleModal: React.FC<SaleModalProps> = ({
             {/* Sale Date & Payment Method Row */}
             <div className="form-row">
               <div className="form-group flex-1">
-                <label className="form-label">{t('fieldSaleDate') || 'Sale Date'}</label>
+                <label className="form-label">{(t as any)('fieldSaleDate') || 'Sale Date'}</label>
                 <input
                   type="date"
                   className="form-input"
@@ -142,7 +142,7 @@ export const SaleModal: React.FC<SaleModalProps> = ({
               </div>
 
               <div className="form-group flex-1">
-                <label className="form-label">{t('fieldPaymentMethod') || 'Payment Method'}</label>
+                <label className="form-label">{(t as any)('fieldPaymentMethod') || 'Payment Method'}</label>
                 <select
                   className="form-select"
                   value={paymentMethod}
@@ -201,7 +201,7 @@ export const SaleModal: React.FC<SaleModalProps> = ({
               </div>
 
               <div className="form-group flex-1">
-                <label className="form-label">{t('fieldTotalPrice') || 'Total Price (₹)'}</label>
+                <label className="form-label">{(t as any)('fieldTotalPrice') || 'Total Price (₹)'}</label>
                 <input
                   type="number"
                   min="0"

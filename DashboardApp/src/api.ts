@@ -166,9 +166,10 @@ export const getDashboardData = async (page = 1, limit = 10): Promise<DashboardD
   try {
     const res = await authFetch(`/dashboard?page=${page}&limit=${limit}`);
     return res.data;
-  } catch (error) {
-    console.error("error while fetching home screen data : ", error)
-  }
+    } catch (error) {
+      console.error("error while fetching home screen data : ", error)
+      throw error;
+    }
 };
 
 export const createSale = async (saleData: {

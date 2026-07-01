@@ -4,7 +4,7 @@ import { LanguageProvider, useLanguage } from './context/LanguageContext';
 import { Sidebar } from './components/Sidebar';
 import { Header } from './components/Header';
 import { StatsCards } from './components/StatsCards';
-import { SalesChart } from './components/SalesChart';
+
 import { SalesTable } from './components/SalesTable';
 import { SaleModal } from './components/SaleModal';
 import { HistoryMonths } from './components/HistoryMonths';
@@ -54,7 +54,7 @@ const DashboardContent: React.FC = () => {
   const [sales, setSales] = useState<Sale[]>([]);
   const [thisMonthSales, setThisMonthSales] = useState(0);
   const [lastMonthSales, setLastMonthSales] = useState(0);
-  const [chartData, setChartData] = useState<{
+  const [_chartData, setChartData] = useState<{
     allTimeTotal: number;
     categoryBreakdown: { category: string; totalAmount: number }[];
   } | null>(null);
@@ -292,7 +292,7 @@ const DashboardContent: React.FC = () => {
       setIsModalOpen(false);
       setSaleToEdit(null);
     } catch (err: any) {
-      addToast(err.message || t('toastError'), 'danger');
+      addToast(err.message || (t as any)('toastError'), 'danger');
     }
   };
 

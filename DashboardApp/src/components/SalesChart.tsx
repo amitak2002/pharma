@@ -366,7 +366,7 @@ export const SalesChart: React.FC<SalesChartProps> = ({ sales, chartData }) => {
               <div key={i} className="donut-legend-item">
                 <div className="donut-legend-color" style={{ backgroundColor: slice.color }}></div>
                 <div className="donut-legend-info">
-                  <div className="donut-legend-name">{t(slice.key) || slice.name}</div>
+                  <div className="donut-legend-name">{(t as any)(slice.key) || slice.name}</div>
                   <div className="donut-legend-meta">
                     <span className="donut-legend-val">₹{slice.value >= 1000 ? `${(slice.value / 1000).toFixed(1)}k` : slice.value}</span>
                     <span className="donut-legend-pct" style={{ color: slice.color }}>
